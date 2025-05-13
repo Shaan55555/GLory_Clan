@@ -1,0 +1,443 @@
+@media (max-width: 600px) {
+  .modal-content {
+    width: 80%;  /* Reduce the width on small screens */
+  }
+}
+
+
+body, html {
+  height: 100%;
+  overflow: hidden;
+}
+
+.App {
+  font-family: 'Arial', sans-serif;
+}
+
+.App header {
+  background-color: #181717;
+  height: 10vh;
+  min-height: 50px;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 99;
+}
+
+.App header h1 {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.App header .logo {
+  margin-right: 10px;
+}
+
+.App header .right-side {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.App header .right-side p {
+  font-size: 1rem;
+  margin-right: 20px;
+}
+
+.App header .sign-out {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.App header .sign-out:hover {
+  background-color: #d32f2f;
+}
+
+.change-name-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.change-name-button:hover {
+  background-color: #45a049;
+}
+
+.App section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: rgb(40, 37, 53);
+  margin-top: 10vh; /* To avoid overlapping with header */
+}
+
+main {
+  padding: 10px;
+  height: 80vh;
+  margin: 10vh 0 10vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+main::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+main::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+main::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
+form {
+  height: 10vh;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  font-size: 1.5rem;
+}
+
+.vanishing-texts {
+    background-color: #1f1f1f;
+    width: 18%;
+    text-align: center;
+}
+
+form button {
+  width: 20%;
+  background-color: rgb(56, 56, 143);
+}
+
+input {
+  line-height: 1.5;
+  width: 100%;
+  font-size: 1.5rem;
+  background: rgb(58, 58, 58);
+  color: white;
+  outline: none;
+  border: none;
+  padding: 0 10px;
+}
+
+button {
+  background-color: #282c34;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sign-in {
+  color: #282c34;
+  background: white;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+ul, li {
+  text-align: left;
+  list-style: none;
+}
+
+p {
+  max-width: 500px;
+  margin-bottom: 12px;
+  line-height: 24px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+}
+
+.sent {
+  flex-direction: row-reverse;
+}
+
+.sent p {
+  color: white;
+  background: #0b93f6;
+  align-self: flex-end;
+}
+
+.received p {
+  background: #e5e5ea;
+  color: black;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 2px 5px;
+}
+
+.sign-in-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  height: auto; /* Remove 100vh */
+  margin-top: 0; /* Reset margin-top */
+  margin-bottom: 0; /* Reset margin-bottom */
+}
+
+.welcome-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #f0f0f0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 1s ease-out;
+  margin-bottom: 1rem; /* Reduced margin to control spacing */
+  line-height: 1.5;
+  display: flex; /* Use flexbox for inline elements */
+  justify-content: center;
+  white-space: nowrap; /* Prevent line break within the container */
+  flex-wrap: wrap; /* Allow text to wrap within container if needed */
+  gap: 0.5rem; /* Add some space between words */
+}
+
+.welcome-text span {
+  display: inline-block;
+}
+
+
+.google-sign-in {
+  font-size: 1.5rem;
+  padding: 12px 20px;
+  background: #4285F4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 1%; /* Add space from text */
+  margin-bottom: 1%;
+}
+
+.google-sign-in:hover {
+  background: #34a853;
+  transform: scale(1.05);
+}
+
+.custom-sign-in {
+  background: linear-gradient(to right, #38a169, #2f855a); /* Green gradient */
+  color: white;
+  font-weight: 600;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.custom-sign-in:hover {
+  background: linear-gradient(to right, #2f855a, #276749); /* Darker green gradient */
+  transform: scale(1.05); /* Grow slightly */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.google-sign-in:focus {
+  outline: none;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modal for Changing Display Name */
+/* Add this to your CSS file */
+.name-change-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;  /* Set a width to make sure the modal is not too small */
+  max-width: 90%; /* Ensures the modal doesn't stretch too wide on mobile */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-content input {
+  width: 100%; /* Ensures the input field takes the full width of the modal */
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+/* Modal Content */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px; /* Adjust max width */
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  overflow: hidden; /* Ensure everything stays within bounds */
+}
+
+/* Adjust input field */
+.modal-content input {
+  padding: 10px;
+  font-size: 1rem;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  flex-grow: 1; /* Allow the input to grow and fill available space */
+  height: 40px; /* Set fixed height to prevent stretching */
+  max-height: 40px; /* Prevent the input from growing too large */
+}
+
+/* Modal Buttons Container */
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px; /* Adjust space above buttons */
+  width: 100%; /* Ensure buttons are stretched to the full width */
+}
+
+/* Individual Buttons */
+.modal-buttons button {
+  padding: 12px 20px; /* Adjust padding for larger buttons */
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #4CAF50; /* Green for Save */
+  color: white;
+  width: 48%; /* Buttons will now take up 48% of the container's width */
+}
+
+.modal-buttons button[type="button"] {
+  background-color: #f44336; /* Red for Cancel */
+}
+
+
+/* Set Name Form Styling */
+/* Set Name Form Modal Overlay */
+.set-name-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1f1f1f;
+  padding: 30px 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  color: white;
+  text-align: center;
+  z-index: 1001;
+}
+
+.set-name-form h2 {
+  margin-top: 0;
+  margin-bottom: 50px;
+  font-size: 1.5rem;
+}
+
+.set-name-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.set-name-form input {
+  max-width: 470px;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #444;
+  background: #2e2e2e;
+  color: white;
+  outline: none;
+}
+
+.set-name-form button {
+  margin-top: 2%;
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.set-name-form button:hover {
+  background-color: #45a049;
+}
+
+.big-logo {
+  max-width: 100%;      /* Ensure it doesn’t stretch too large */
+  height: auto;         /* Maintain aspect ratio */
+  width: 200px;         /* Adjust width to your preferred size */
+  margin-bottom: -4%;
+  margin-top: -4%;
+}
