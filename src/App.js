@@ -474,12 +474,12 @@ function ChatMessage({ message }) {
           e.target.src = './discord-logo.jpg'; // Local fallback
         }}
       />
-      <div>
-        <small style={{ color: '#aaa', fontSize: '0.75rem', marginLeft: '10px' }}>
+      <div className="bubble">
+        <small className="sender-name" style={{ color: '#aaa', fontSize: '0.75rem', marginLeft: '10px' }}>
           {displayName || 'Anonymous'}
         </small>
-        <p>{text}</p>
-        <small>{localTime}</small>
+        <p className="message-text">{text}</p>
+        <small className="timestamp">{localTime}</small>
       </div>
     </div>
   );

@@ -1,13 +1,32 @@
-@media (max-width: 600px) {
-  .modal-content {
-    width: 80%;  /* Reduce the width on small screens */
-  }
+
+/* Root Theme Variables */
+:root {
+  --bg-main: #1e1e2f;
+  --bg-secondary: #2a2a3b;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --text-light: #ffffff;
+  --text-dark: #000000;
+  --gray-light: #cbd5e1;
+  --gray-dark: #4b5563;
+  --error: #ef4444;
+  --error-hover: #dc2626;
+  --success: #22c55e;
+  --success-hover: #16a34a;
 }
 
+/* Replacing the original CSS colors, preserving structure and layout */
+@media (max-width: 600px) {
+  .modal-content {
+    width: 80%;
+  }
+}
 
 body, html {
   height: 100%;
   overflow: hidden;
+  background-color: var(--bg-main);
+  color: var(--text-light);
 }
 
 .App {
@@ -15,10 +34,10 @@ body, html {
 }
 
 .App header {
-  background-color: #181717;
+  background-color: var(--bg-secondary);
   height: 10vh;
   min-height: 50px;
-  color: white;
+  color: var(--text-light);
   position: fixed;
   top: 0;
   left: 0;
@@ -54,7 +73,7 @@ body, html {
 }
 
 .App header .sign-out {
-  background-color: #f44336;
+  background-color: var(--error);
   border: none;
   color: white;
   padding: 10px 20px;
@@ -64,11 +83,11 @@ body, html {
 }
 
 .App header .sign-out:hover {
-  background-color: #d32f2f;
+  background-color: var(--error-hover);
 }
 
 .change-name-button {
-  background-color: #4caf50;
+  background-color: var(--success);
   color: white;
   padding: 8px 15px;
   border-radius: 5px;
@@ -77,7 +96,7 @@ body, html {
 }
 
 .change-name-button:hover {
-  background-color: #45a049;
+  background-color: var(--success-hover);
 }
 
 .App section {
@@ -85,8 +104,8 @@ body, html {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  background-color: rgb(40, 37, 53);
-  margin-top: 10vh; /* To avoid overlapping with header */
+  background-color: var(--bg-main);
+  margin-top: 10vh;
 }
 
 main {
@@ -103,11 +122,11 @@ main::-webkit-scrollbar {
 }
 
 main::-webkit-scrollbar-track {
-  background: #1e1e24;
+  background: var(--bg-secondary);
 }
 
 main::-webkit-scrollbar-thumb {
-  background: #6649b8;
+  background: var(--accent);
 }
 
 form {
@@ -119,21 +138,22 @@ form {
 }
 
 .vanishing-texts {
-    background-color: #1f1f1f;
-    width: 18%;
-    text-align: center;
+  background-color: var(--bg-secondary);
+  width: 18%;
+  text-align: center;
 }
 
 form button {
   width: 20%;
-  background-color: rgb(56, 56, 143);
+  background-color: var(--accent);
+  color: white;
 }
 
 input {
   line-height: 1.5;
   width: 100%;
   font-size: 1.5rem;
-  background: rgb(58, 58, 58);
+  background: var(--gray-dark);
   color: white;
   outline: none;
   border: none;
@@ -141,7 +161,7 @@ input {
 }
 
 button {
-  background-color: #282c34;
+  background-color: var(--accent);
   border: none;
   color: white;
   padding: 15px 32px;
@@ -157,7 +177,7 @@ button:disabled {
 }
 
 .sign-in {
-  color: #282c34;
+  color: var(--text-dark);
   background: white;
   max-width: 400px;
   margin: 0 auto;
@@ -175,7 +195,7 @@ p {
   padding: 10px 20px;
   border-radius: 25px;
   position: relative;
-  color: white;
+  color: var(--text-light);
   text-align: center;
 }
 
@@ -189,14 +209,14 @@ p {
 }
 
 .sent p {
+  background: var(--accent);
   color: white;
-  background: #0b93f6;
-  align-self: flex-end;
 }
 
 .received p {
-  background: #e5e5ea;
+  background: var(--gray-light);
   color: black;
+  margin-top: 2.4%;
 }
 
 img {
@@ -213,31 +233,27 @@ img {
   justify-content: center;
   padding: 20px;
   text-align: center;
-  color: #fff;
-  height: auto; /* Remove 100vh */
-  margin-top: 0; /* Reset margin-top */
-  margin-bottom: 0; /* Reset margin-bottom */
+  color: white;
 }
 
 .welcome-text {
   font-size: 3rem;
   font-weight: bold;
-  color: #f0f0f0;
+  color: var(--gray-light);
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
   animation: fadeInUp 1s ease-out;
-  margin-bottom: 1rem; /* Reduced margin to control spacing */
+  margin-bottom: 1rem;
   line-height: 1.5;
-  display: flex; /* Use flexbox for inline elements */
+  display: flex;
   justify-content: center;
-  white-space: nowrap; /* Prevent line break within the container */
-  flex-wrap: wrap; /* Allow text to wrap within container if needed */
-  gap: 0.5rem; /* Add some space between words */
+  white-space: nowrap;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .welcome-text span {
   display: inline-block;
 }
-
 
 .google-sign-in {
   font-size: 1.5rem;
@@ -249,7 +265,7 @@ img {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  margin-top: 1%; /* Add space from text */
+  margin-top: 1%;
   margin-bottom: 1%;
 }
 
@@ -259,7 +275,7 @@ img {
 }
 
 .custom-sign-in {
-  background: linear-gradient(to right, #38a169, #2f855a); /* Green gradient */
+  background: linear-gradient(to right, var(--success), #15803d);
   color: white;
   font-weight: 600;
   padding: 12px 28px;
@@ -272,8 +288,8 @@ img {
 }
 
 .custom-sign-in:hover {
-  background: linear-gradient(to right, #2f855a, #276749); /* Darker green gradient */
-  transform: scale(1.05); /* Grow slightly */
+  background: linear-gradient(to right, #15803d, #14532d);
+  transform: scale(1.05);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -292,15 +308,14 @@ img {
   }
 }
 
-/* Modal for Changing Display Name */
-/* Add this to your CSS file */
+/* Modal Styling */
 .name-change-modal {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -308,84 +323,58 @@ img {
 }
 
 .modal-content {
-  background-color: white;
+  background-color: var(--bg-secondary);
+  color: var(--text-light);
   padding: 20px;
   border-radius: 8px;
-  width: 300px;  /* Set a width to make sure the modal is not too small */
-  max-width: 90%; /* Ensures the modal doesn't stretch too wide on mobile */
+  width: 300px;
+  max-width: 90%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.modal-content input {
-  width: 100%; /* Ensures the input field takes the full width of the modal */
-  padding: 10px;
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
-
-/* Modal Content */
-.modal-content {
-  display: flex;
-  flex-direction: column;
   gap: 12px;
-  max-width: 400px; /* Adjust max width */
-  width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-  overflow: hidden; /* Ensure everything stays within bounds */
 }
 
-/* Adjust input field */
 .modal-content input {
+  width: 100%;
   padding: 10px;
   font-size: 1rem;
-  width: 100%;
+  background-color: var(--gray-dark);
+  border: 1px solid #666;
   border-radius: 4px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  margin-bottom: 0;
-  flex-grow: 1; /* Allow the input to grow and fill available space */
-  height: 40px; /* Set fixed height to prevent stretching */
-  max-height: 40px; /* Prevent the input from growing too large */
+  color: white;
 }
 
-/* Modal Buttons Container */
 .modal-buttons {
   display: flex;
   justify-content: flex-end;
   gap: 8px;
-  margin-top: 12px; /* Adjust space above buttons */
-  width: 100%; /* Ensure buttons are stretched to the full width */
+  margin-top: 12px;
+  width: 100%;
 }
 
-/* Individual Buttons */
 .modal-buttons button {
-  padding: 12px 20px; /* Adjust padding for larger buttons */
+  padding: 12px 20px;
   font-size: 1rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  background-color: #4CAF50; /* Green for Save */
+  background-color: var(--success);
   color: white;
-  width: 48%; /* Buttons will now take up 48% of the container's width */
+  width: 48%;
 }
 
 .modal-buttons button[type="button"] {
-  background-color: #f44336; /* Red for Cancel */
+  background-color: var(--error);
 }
 
-
-/* Set Name Form Styling */
-/* Set Name Form Modal Overlay */
 .set-name-form {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #1f1f1f;
+  background: var(--bg-secondary);
   padding: 30px 20px;
   border-radius: 10px;
   width: 90%;
@@ -422,7 +411,7 @@ img {
 .set-name-form button {
   margin-top: 2%;
   padding: 12px;
-  background-color: #4caf50;
+  background-color: var(--success);
   color: white;
   border: none;
   border-radius: 5px;
@@ -431,13 +420,62 @@ img {
 }
 
 .set-name-form button:hover {
-  background-color: #45a049;
+  background-color: var(--success-hover);
 }
 
 .big-logo {
-  max-width: 100%;      /* Ensure it doesn’t stretch too large */
-  height: auto;         /* Maintain aspect ratio */
-  width: 200px;         /* Adjust width to your preferred size */
+  max-width: 100%;
+  height: auto;
+  width: 200px;
   margin-bottom: -4%;
   margin-top: -4%;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 10px;
+}
+
+.message.sent {
+  flex-direction: row-reverse;
+}
+
+.bubble {
+  background: var(--gray-light);
+  color: black;
+  border-radius: 20px;
+  padding: 10px 15px;
+  max-width: 75%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.message.sent .bubble {
+  background: var(--accent);
+  color: white;
+}
+
+.sender-name {
+  font-weight: bold;
+  margin-bottom: -3%;
+  font-size: 0.9rem;
+}
+
+.message-text {
+  font-size: 1rem;
+  margin-bottom: 0;
+  word-wrap: break-word;
+}
+
+.timestamp {
+  font-size: 0.7rem;
+  color: var(--gray-dark);
+  align-self: flex-end;
+  margin-top: 0%;
+}
+
+.message.sent .timestamp {
+  color: rgba(255, 255, 255, 0.7);
 }
